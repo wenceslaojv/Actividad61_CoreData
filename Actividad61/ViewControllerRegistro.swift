@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewControllerRegistro: UIViewController {
 
@@ -25,7 +26,6 @@ class ViewControllerRegistro: UIViewController {
     @IBAction func txtContrasenia(_ sender: UITextField) {
         self.strContraseña = sender.text!
     }
-    
     @IBAction func txtConfirContrasenia(_ sender: UITextField) {
         self.strConfirContraseña = sender.text!
     }
@@ -42,10 +42,45 @@ class ViewControllerRegistro: UIViewController {
         self.strTelefono = sender.text!
     }
     
+    @IBAction func btnImprime(_ sender: Any) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let usersFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Usuarios")
+        
+        do {
+            let fetchedUsers = try context.fetch(usersFetch) as! [Usuarios]
+            
+            //print(type(of:fetchedUsers))
+            for item in fetchedUsers{
+                if let user = item.nombre{
+                    print("\(item.nombre!) _ \(item.contrasenia!) _ \(item.email!) _ \(item.fecha!) _ \(item.noempleado!) _ \(item.telefono!) "  )
+
+                    
+                }
+            }
+            
+            
+        } catch {
+            fatalError("Failed to fetch users: \(error)")
+        }
+    }
     @IBAction func btnRegistro(_ sender: UIButton) {
         if validaRegistros(){
             print("entra a guardar")
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
             
+            let user = Usuarios(context: context)
+            user.nombre = strNombre
+            user.contrasenia = strContraseña
+            user.confircontrasenia = strConfirContraseña
+            user.email = strEmail
+            user.fecha = strFecha
+            user.noempleado = strNoEmpleado
+            user.telefono = strTelefono
+            
+            appDelegate.saveContext()
         }
     }
     override func viewDidLoad() {

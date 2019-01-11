@@ -166,6 +166,14 @@
                                     <action selector="txtTelefono:" destination="5mK-vr-80W" eventType="editingDidEnd" id="Ptb-Eh-zah"/>
                                 </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hh4-Da-YQL">
+                                <rect key="frame" x="135" y="513" width="58" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="registrar"/>
+                                <connections>
+                                    <action selector="btnRegistro:" destination="5mK-vr-80W" eventType="touchUpInside" id="5UX-9w-0OY"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Registro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDY-F4-11g">
                                 <rect key="frame" x="129" y="76" width="64" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -173,12 +181,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hh4-Da-YQL">
-                                <rect key="frame" x="135" y="513" width="58" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1q-R5-WC0">
+                                <rect key="frame" x="133" y="544" width="56" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="registrar"/>
+                                <state key="normal" title="imprime"/>
                                 <connections>
-                                    <action selector="btnRegistro:" destination="5mK-vr-80W" eventType="touchUpInside" id="5UX-9w-0OY"/>
+                                    <action selector="btnImprime:" destination="5mK-vr-80W" eventType="touchUpInside" id="ZLD-yn-wUw"/>
                                 </connections>
                             </button>
                         </subviews>
