@@ -44,7 +44,8 @@ class ViewControllerRegistro: UIViewController {
     
     @IBAction func btnRegistro(_ sender: UIButton) {
         if validaRegistros(){
-            print("entra")
+            print("entra a guardar")
+            
         }
     }
     override func viewDidLoad() {
